@@ -9,11 +9,11 @@
         <version>3.3.2</version>
         <relativePath /> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.telusko</groupId>
-    <artifactId>Part29-SpringSecEx</artifactId>
+    <groupId>com.ecomm.admin</groupId>
+    <artifactId>Ecomm-Admin-Protal</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Part29-SpringSecEx</name>
-    <description>Part29-SpringSecEx</description>
+    <name>Ecomm-Admin-Protal</name>
+    <description>Ecomm-Admin-Protal</description>
     <url />
     <licenses>
         <license />
