@@ -14,13 +14,13 @@ public class CategoryController {
     @Autowired
     public CategoryService categoryService;
 
-    @GetMapping("/getall/categories")
+    @GetMapping("/categories")
     public List<Category> getAllCategories() {
 
         return categoryService.getAllCategories();
     }
 
-    @PostMapping("/create/category")
+    @PostMapping("/create")
     public Category createCategory(@RequestBody Category category) {
         return categoryService.createCategory(category);
     }
