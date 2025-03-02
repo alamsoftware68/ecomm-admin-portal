@@ -11,6 +11,7 @@ public interface SubCategoryService {
 
     public SubCategory createSubCategory(SubCategory subCategory);
 
+    SubCategory updateSubCategory(SubCategory subCategory);
 
-
+    String deleteSubCategory(int id);
 }

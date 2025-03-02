@@ -8,6 +8,8 @@ public class SubCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column(unique = true)
     private String subCategoryName;
     private int subCategoryPriority;
     private int categoryId;

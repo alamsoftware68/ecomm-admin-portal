@@ -33,4 +33,15 @@ public class SubCategoryController {
     public SubCategory createSubCategory(@RequestBody SubCategory subCategory) {
         return subCategoryService.createSubCategory(subCategory);
     }
+
+    @PutMapping("/update/{id}")
+    public SubCategory updateSubCategory(@PathVariable("id") int id, @RequestBody SubCategory subCategory) {
+        return subCategoryService.updateSubCategory(subCategory);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public String deleteSubCategory(@PathVariable("id") int id) {
+        subCategoryService.deleteSubCategory(id);
+        return "SubCategory deleted successfully";
+    }
 }

@@ -3,6 +3,7 @@ package com.ecomm.admin.controller;
 import com.ecomm.admin.model.Category;
 import com.ecomm.admin.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,13 +16,28 @@ public class CategoryController {
     public CategoryService categoryService;
 
     @GetMapping("/categories")
-    public List<Category> getAllCategories() {
+    public ResponseEntity<List<Category>> getAllCategories() {
 
-        return categoryService.getAllCategories();
+        return ResponseEntity.ok().body(categoryService.getAllCategories());
     }
 
     @PostMapping("/create")
-    public Category createCategory(@RequestBody Category category) {
-        return categoryService.createCategory(category);
+    public ResponseEntity<Category> createCategory(@RequestBody Category category) {
+        return ResponseEntity.ok().body(categoryService.createCategory(category));
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Category> getCategoryById(@PathVariable int id) {
+        return ResponseEntity.ok().body(categoryService.getCategoryById(id));
+    }
+
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Category> updateCategory(@PathVariable int id, @RequestBody Category category) {
+        return ResponseEntity.ok().body(categoryService.updateCategory(id, category));
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deleteCategory(@PathVariable int id) {
+        return ResponseEntity.ok().body(categoryService.deleteCategory(id));
     }
 }
